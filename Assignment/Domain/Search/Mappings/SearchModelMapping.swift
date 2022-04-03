@@ -8,21 +8,21 @@
 import Assignment_Swagger
 
 extension SearchModel: Mappable {
-    init(from otherType: SearchResponseDTO) {
-        self.init(totalCount: otherType.totalCount, items: otherType.items.map(\.otherType))
+    init(from mapped: SearchResponseDTO) {
+        self.init(items: mapped.items.map(\.mapped))
     }
 
-    var otherType: SearchResponseDTO {
+    var mapped: SearchResponseDTO {
         .init(from: self)
     }
 }
 
 extension SearchResponseDTO: Mappable {
-    init(from otherType: SearchModel) {
-        self.init(totalCount: otherType.totalCount, items: otherType.items.map(\.otherType))
+    init(from mapped: SearchModel) {
+        self.init(items: mapped.items.map(\.mapped))
     }
 
-    var otherType: SearchModel {
+    var mapped: SearchModel {
         .init(from: self)
     }
 }

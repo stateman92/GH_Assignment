@@ -6,8 +6,18 @@
 //
 
 import UIKit
-import Resolver
+import Combine
 
-class BaseScreen<ViewModel: BaseViewModel>: UIViewController {
+class BaseTableScreen<ViewModel: BaseViewModel>: UITableViewController {
+    @LazyInjected var loadingService: LoadingServiceProtocol
     @LazyInjected var viewModel: ViewModel
+    private let loadingOverlay = LoadingOverlay.shared
+    var cancellables = Set<AnyCancellable>()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadingService.state
+            .sink { [unowned self] in loadingOverlay.set(isShowing: $0) }
+            .store(in: &cancellables)
+    }
 }

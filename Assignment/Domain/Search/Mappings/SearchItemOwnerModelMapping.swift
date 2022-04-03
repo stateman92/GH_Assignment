@@ -8,21 +8,21 @@
 import Assignment_Swagger
 
 extension SearchItemOwnerModel: Mappable {
-    init(from otherType: SearchResponseItemOwnerDTO) {
-        self.init(name: otherType.login, avatarUrl: otherType.avatarUrl)
+    init(from mapped: SearchResponseItemOwnerDTO) {
+        self.init(name: mapped.login, avatarUrl: mapped.avatarUrl)
     }
 
-    var otherType: SearchResponseItemOwnerDTO {
+    var mapped: SearchResponseItemOwnerDTO {
         .init(from: self)
     }
 }
 
 extension SearchResponseItemOwnerDTO: Mappable {
-    init(from otherType: SearchItemOwnerModel) {
-        self.init(login: otherType.name, avatarUrl: otherType.avatarUrl)
+    init(from mapped: SearchItemOwnerModel) {
+        self.init(login: mapped.name, avatarUrl: mapped.avatarUrl)
     }
 
-    var otherType: SearchItemOwnerModel {
+    var mapped: SearchItemOwnerModel {
         .init(from: self)
     }
 }

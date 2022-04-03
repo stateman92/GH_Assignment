@@ -6,8 +6,8 @@
 //
 
 protocol Mappable {
-    associatedtype OtherType
+    associatedtype MappingType
 
-    init(from otherType: OtherType)
-    var otherType: OtherType { get }
+    init(from mapped: MappingType)
+    var mapped: MappingType { get }
 }
