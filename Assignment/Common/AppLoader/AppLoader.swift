@@ -14,6 +14,8 @@ struct AppLoader {
     private init() { }
 }
 
+// MARK: - Public methods
+
 extension AppLoader {
     /// Setup the necessary business logic-related things.
     func setup() {
@@ -21,10 +23,17 @@ extension AppLoader {
     }
 
     /// Setup the necessary UI-related things.
-    func setupUI(in windowScene: UIWindowScene) -> UIWindow {
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = DependencyInjector.resolve() as UINavigationController
-        window.makeKeyAndVisible()
-        return window
+    /// - Parameter windowScene: the window scene in which the app runs.
+    /// - Returns: the window which is made key and visible.
+    func setupUI(in windowScene: UIWindowScene) -> UIWindow? {
+        let navigator: Navigator = DependencyInjector.resolve()
+        guard let navigationController = navigator as? UINavigationController else { return nil }
+
+        navigationController.navigationBar.prefersLargeTitles = true
+
+        return UIWindow(windowScene: windowScene).configure {
+            $0.rootViewController = navigationController
+            $0.makeKeyAndVisible()
+        }
     }
 }

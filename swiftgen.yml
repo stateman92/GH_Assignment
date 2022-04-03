@@ -1,0 +1,10 @@
+strings:
+  inputs: ./Assignment/Common/Resources/en.lproj/Localizable.strings
+  options:
+    separator: "_"
+  outputs:
+    templateName: structured-swift5
+    output: ./Assignment/Common/Resources/Generated/Strings.swift
+    params:
+      forceProvidesNamespaces: true
+      publicAccess: true

@@ -9,7 +9,7 @@ import UIKit
 import Resolver
 
 /// A thin layer between the application and the DI library (Resolver).
-public struct DependencyInjector {
+struct DependencyInjector {
     static let resolver = Resolver()
 
     private init() { }
@@ -18,9 +18,13 @@ public struct DependencyInjector {
 extension DependencyInjector {
     /// Register all the dependencies of the application.
     static func registerDependencies() {
-        registerScreens()
+        registerModules()
+        registerServices()
 
-        resolver.register { UINavigationController(rootViewController: resolve() as MainScreen) }.scope(.shared)
+        resolver
+            .register { UINavigationController(rootViewController: resolve() as MainScreen) }
+            .implements(Navigator.self)
+            .scope(.shared)
     }
 
     /// Resolve a given type of dependency.
@@ -30,7 +34,12 @@ extension DependencyInjector {
 }
 
 extension DependencyInjector {
-    private static func registerScreens() {
-        resolver.register { MainScreen() }
+    private static func registerModules() {
+        registerMainModule()
+    }
+
+    private static func registerServices() {
+        resolver.register { NetworkService() }.implements(NetworkServiceProtocol.self)
+        resolver.register { LoadingService() }.implements(LoadingServiceProtocol.self).scope(.shared)
     }
 }

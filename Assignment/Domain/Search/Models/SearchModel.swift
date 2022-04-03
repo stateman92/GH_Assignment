@@ -6,6 +6,5 @@
 //
 
 struct SearchModel {
-    let totalCount: Int
     let items: [SearchItemModel]
 }

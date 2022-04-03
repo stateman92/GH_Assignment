@@ -15,8 +15,26 @@
         "repositoryURL": "https://github.com/stateman92/GH_Assignment_Swagger",
         "state": {
           "branch": null,
-          "revision": "aac619534dd953820fc834e0dd5bfef9afb1c31d",
-          "version": "1.0.3"
+          "revision": "cc14da8516895cfc29935d437d0b28812cdfe146",
+          "version": "1.0.6"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "32e4acdf6971f58f5ad552389cf2d7d016334eaf",
+          "version": "7.2.0"
+        }
+      },
+      {
+        "package": "Lottie",
+        "repositoryURL": "https://github.com/airbnb/lottie-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "4a6058cbbdfe4f74aeae92c8bd51ad3b0de2a1ee",
+          "version": "3.3.0"
         }
       },
       {
@@ -26,6 +44,15 @@
           "branch": null,
           "revision": "97de0b0320036607564af4a60025b48f8d041221",
           "version": "1.5.0"
+        }
+      },
+      {
+        "package": "SFSafeSymbols",
+        "repositoryURL": "https://github.com/SFSafeSymbols/SFSafeSymbols",
+        "state": {
+          "branch": null,
+          "revision": "c61de7a6e9eb1520d32316b06d5932accd974e70",
+          "version": "2.1.3"
         }
       }
     ]

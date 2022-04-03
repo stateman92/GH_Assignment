@@ -8,33 +8,33 @@
 import Assignment_Swagger
 
 extension SearchItemModel: Mappable {
-    init(from otherType: SearchResponseItemDTO) {
-        self.init(id: otherType._id,
-                  name: otherType.name,
-                  owner: otherType.owner.otherType,
-                  description: otherType._description,
-                  language: otherType.language,
-                  stars: otherType.stargazersCount,
-                  url: otherType.url)
+    init(from mapped: SearchResponseItemDTO) {
+        self.init(id: mapped._id,
+                  name: mapped.name,
+                  owner: mapped.owner.mapped,
+                  description: mapped._description,
+                  language: mapped.language,
+                  stars: mapped.stargazersCount,
+                  url: mapped.htmlUrl)
     }
 
-    var otherType: SearchResponseItemDTO {
+    var mapped: SearchResponseItemDTO {
         .init(from: self)
     }
 }
 
 extension SearchResponseItemDTO: Mappable {
-    init(from otherType: SearchItemModel) {
-        self.init(_id: otherType.id,
-                  name: otherType.name,
-                  owner: otherType.owner.otherType,
-                  _description: otherType.description,
-                  language: otherType.language,
-                  stargazersCount: otherType.stars,
-                  url: otherType.url)
+    init(from mapped: SearchItemModel) {
+        self.init(_id: mapped.id,
+                  name: mapped.name,
+                  owner: mapped.owner.mapped,
+                  _description: mapped.description,
+                  language: mapped.language,
+                  stargazersCount: mapped.stars,
+                  htmlUrl: mapped.url)
     }
 
-    var otherType: SearchItemModel {
+    var mapped: SearchItemModel {
         .init(from: self)
     }
 }
