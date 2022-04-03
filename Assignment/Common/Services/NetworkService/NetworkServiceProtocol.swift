@@ -7,37 +7,13 @@
 
 import Assignment_Swagger
 
-/// Network errors.
-enum NetworkError: Error {
-    case unknown
-}
-
-/// Types of sortings.
-enum SearchSort: String {
-    case stars
-    case forks
-    case helpWantedIssues
-    case updated
-
-    var asQueryParameter: String {
-        switch self {
-        case .helpWantedIssues: return "help-wanted-issues"
-        default: return rawValue
-        }
-    }
-}
-
-/// Types of ordering.
-enum SearchOrder: String {
-    case desc
-    case asc
-
-    var asQueryParameter: String {
-        rawValue
-    }
-}
-
 protocol NetworkServiceProtocol {
+    /// Search for GitHub repositories.
+    /// - Parameters:
+    ///   - searchTerm: the query contains one or more search keywords and qualifiers.
+    ///   - perPage: results per page (max 100).
+    ///   - page: page number of the results to fetch.
+    ///   - completion: a completion handler which holds the result of the call.
     func searchRepositories(searchTerm: String,
                             perPage: Int,
                             page: Int,

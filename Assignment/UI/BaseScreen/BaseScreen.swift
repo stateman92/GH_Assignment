@@ -9,15 +9,18 @@ import UIKit
 import Combine
 
 class BaseTableScreen<ViewModel: BaseViewModel>: UITableViewController {
-    @LazyInjected var loadingService: LoadingServiceProtocol
+    // MARK: Properties
+
+    @LazyInjected private var loadingService: LoadingServiceProtocol
     @LazyInjected var viewModel: ViewModel
-    private let loadingOverlay = LoadingOverlay.shared
     var cancellables = Set<AnyCancellable>()
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingService.state
-            .sink { [unowned self] in loadingOverlay.set(isShowing: $0) }
+            .sink { LoadingOverlay.shared.set(isShowing: $0) }
             .store(in: &cancellables)
     }
 }

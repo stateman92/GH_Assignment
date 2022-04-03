@@ -13,4 +13,5 @@ struct SearchItemModel {
     let language: String
     let stars: Int
     let url: String
+    let forks: Int
 }

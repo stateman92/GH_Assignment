@@ -9,17 +9,18 @@ import Combine
 import SafariServices
 
 final class MainViewModel: BaseViewModel {
-    @LazyInjected private var networkService: NetworkServiceProtocol
-    @LazyInjected private var loadingService: LoadingServiceProtocol
-
-    @Throttling(seconds: 0.66) var searchTerm: String = .init()
+    // MARK: Properties
 
     let searchModelSubject = CurrentValueSubject<SearchModel, Never>(.init(items: []))
     let errorSubject = PassthroughSubject<Error, Never>()
-
+    @Throttling(seconds: 0.66) var searchTerm: String = .init()
+    @LazyInjected private var networkService: NetworkServiceProtocol
+    @LazyInjected private var loadingService: LoadingServiceProtocol
     private var nextPage = 1
     private let perPage = 10
     private var fetchingInProgress = false
+
+    // MARK: Initialization
 
     override init() {
         super.init()
@@ -27,23 +28,36 @@ final class MainViewModel: BaseViewModel {
     }
 }
 
+// MARK: - Public methods
+
 extension MainViewModel {
+    /// Get the next page of the results.
     func getMoreResults() {
         guard !fetchingInProgress else { return }
         fetchingInProgress = true
         searchTermDidChange(searchTerm, newSearch: false)
     }
 
+    /// Get the n-th repository.
+    /// - Parameter index: the index of the desired repository.
+    /// - Returns: the `SearchItemModel`.
     func getItem(with index: Int) -> SearchItemModel? {
         guard searchModelSubject.value.items.indices.contains(index) else { return nil }
         return searchModelSubject.value.items[index]
     }
 
+    /// Call if the user selected a repository.
+    /// - Parameter index: the index of the selected repository.
+    /// - Note: the user wants to "see the repository’s website without leaving the application."
+    /// With the current implementation the user definitely does not leave the app,
+    /// but for a not well skilled user may think that they switched to Safari.
     func didSelect(index: Int) {
         guard let item = getItem(with: index), let url = URL(string: item.url) else { return }
         navigator.present(SFSafariViewController(url: url), animated: true)
     }
 }
+
+// MARK: - Setups
 
 extension MainViewModel {
     private func setup() {

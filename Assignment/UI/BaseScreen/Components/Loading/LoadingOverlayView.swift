@@ -8,14 +8,20 @@
 import UIKit
 
 final class LoadingOverlayView: View {
+    // MARK: Properties
+
     private let background = View()
     private let indicator = UIActivityIndicatorView(style: .large)
+
+    // MARK: Initialization
 
     override init() {
         super.init()
         setupUI()
     }
 }
+
+// MARK: - Setups
 
 extension LoadingOverlayView {
     private func setupUI() {

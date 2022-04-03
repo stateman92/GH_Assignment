@@ -8,7 +8,11 @@
 import UIKit
 
 final class LanguageView: View {
+    // MARK: Properties
+
     private let languageLabel = Label()
+
+    // MARK: Initialization
 
     override init() {
         super.init()
@@ -37,7 +41,11 @@ extension LanguageView {
     }
 }
 
+// MARK: - Public methods
+
 extension LanguageView {
+    /// Setup the view with a language.
+    /// - Parameter language: the language.
     func setup(language: String) {
         languageLabel.text = language
     }

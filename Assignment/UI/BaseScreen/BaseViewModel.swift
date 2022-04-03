@@ -8,5 +8,7 @@
 import UIKit
 
 class BaseViewModel {
+    // MARK: Properties
+
     @LazyInjected var navigator: UINavigationController
 }

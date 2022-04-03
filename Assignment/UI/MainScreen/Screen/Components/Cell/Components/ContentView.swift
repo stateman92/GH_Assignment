@@ -8,12 +8,19 @@
 import UIKit
 
 final class ContentView: View {
+    // MARK: Properties
+
     private let cardView = View()
-    private let starView = StarView()
+    private let starView = AttributeView(image: UIImage(systemSymbol: .starFill),
+                                         tintColor: .systemYellow.withAlphaComponent(0.75))
+    private let forkView = AttributeView(image: UIImage(systemSymbol: .tuningfork),
+                                         tintColor: .systemGray.withAlphaComponent(0.75))
     private let nameView = NameView()
     private let imageView = LoadableImageView()
     private let descriptionLabel = Label()
     private let languageView = LanguageView()
+
+    // MARK: Initialization
 
     override init() {
         super.init()
@@ -27,6 +34,7 @@ extension ContentView {
     private func setupUI() {
         setupCardView()
         setupStarView()
+        setupForkView()
         setupNameView()
         setupImageView()
         setupDescriptionLabel()
@@ -51,6 +59,15 @@ extension ContentView {
         }
     }
 
+    private func setupForkView() {
+        forkView.configure {
+            cardView.addSubview($0)
+
+            $0.topAnchor.constraint(equalTo: starView.bottomAnchor, constant: 8).isActive = true
+            $0.anchorToSuperview(trailing: -16)
+        }
+    }
+
     private func setupNameView() {
         nameView.configure {
             cardView.addSubview($0)
@@ -72,7 +89,8 @@ extension ContentView {
             $0.setWidth(100)
             $0.setHeight(100)
             $0.anchorToLeading(constant: 16)
-            $0.topAnchor.constraint(equalTo: nameView.bottomAnchor, constant: 8).isActive = true
+            $0.topAnchor.constraint(greaterThanOrEqualTo: nameView.bottomAnchor, constant: 8).isActive = true
+            $0.topAnchor.constraint(greaterThanOrEqualTo: forkView.bottomAnchor, constant: 8).isActive = true
         }
     }
 
@@ -100,16 +118,22 @@ extension ContentView {
     }
 }
 
+// MARK: - Public methods
+
 extension ContentView {
+    /// Setup the view with a model.
+    /// - Parameter model: the model.
     func setup(with model: SearchItemModel) {
         imageView.load(url: model.owner.avatarUrl)
         nameView.setup(owner: model.owner.name, repository: model.name)
         languageView.setup(language: model.language)
-        starView.setup(number: model.stars)
+        starView.setup(text: String(model.stars))
+        forkView.setup(text: String(model.forks))
         descriptionLabel.text = model.description
     }
 
-    func prepareForReuse() {
+    /// Call to cancel the image loading on the view.
+    func cancelImageLoading() {
         imageView.cancelImageLoading()
     }
 }

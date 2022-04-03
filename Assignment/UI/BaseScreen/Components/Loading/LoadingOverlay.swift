@@ -7,10 +7,13 @@
 
 import UIKit
 
+/// A class that manages the view that shows the loading state.
 final class LoadingOverlay {
     /// Singleton object.
     static let shared = LoadingOverlay()
     private init() { }
+
+    // MARK: Properties
 
     private let animationDuration = 0.25
     private let loadingOverlayView = LoadingOverlayView()
@@ -19,10 +22,14 @@ final class LoadingOverlay {
 // MARK: - Public methods
 
 extension LoadingOverlay {
+    /// Set the loading state.
+    /// - Parameter isShowing: whether the loading indicator should be shown or not.
     func set(isShowing: Bool) {
         if isShowing {
+            UIApplication.shared.setNetworkIndicator(isVisible: true)
             show(on: UIApplication.shared.keyWindow)
         } else {
+            UIApplication.shared.setNetworkIndicator(isVisible: false)
             hide()
         }
     }

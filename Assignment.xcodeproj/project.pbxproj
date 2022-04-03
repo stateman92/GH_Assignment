@@ -20,7 +20,7 @@
 		58138DD027F8A89E00F959CE /* LoadableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138DCF27F8A89E00F959CE /* LoadableImageView.swift */; };
 		58138DD227F8BB0F00F959CE /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138DD127F8BB0F00F959CE /* NameView.swift */; };
 		58138DD427F8BD2D00F959CE /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138DD327F8BD2D00F959CE /* LanguageView.swift */; };
-		58138DD627F8BF9000F959CE /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138DD527F8BF9000F959CE /* StarView.swift */; };
+		58138DD627F8BF9000F959CE /* AttributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138DD527F8BF9000F959CE /* AttributeView.swift */; };
 		58138DD827F8BFCA00F959CE /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138DD727F8BFCA00F959CE /* View.swift */; };
 		58138DDE27F8C31F00F959CE /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138DDD27F8C31F00F959CE /* Strings.swift */; };
 		58138DE227F8C35C00F959CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58138DE427F8C35C00F959CE /* Localizable.strings */; };
@@ -36,6 +36,9 @@
 		58138E0527F9122500F959CE /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138E0427F9122500F959CE /* NetworkServiceProtocol.swift */; };
 		58138E0727F912EC00F959CE /* LoadingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138E0627F912EC00F959CE /* LoadingServiceProtocol.swift */; };
 		5838FA6427F8757800305E5D /* Throttling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5838FA6327F8757800305E5D /* Throttling.swift */; };
+		5859FFAC27F92EA200B6E826 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859FFAB27F92EA200B6E826 /* NetworkError.swift */; };
+		5859FFAE27F92EB000B6E826 /* SearchSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859FFAD27F92EB000B6E826 /* SearchSort.swift */; };
+		5859FFB027F92EC200B6E826 /* SearchOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859FFAF27F92EC200B6E826 /* SearchOrder.swift */; };
 		58DB20F227F7C33E00628244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB20F127F7C33E00628244 /* AppDelegate.swift */; };
 		58DB20F427F7C33E00628244 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB20F327F7C33E00628244 /* SceneDelegate.swift */; };
 		58DB20FB27F7C34000628244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58DB20FA27F7C34000628244 /* Assets.xcassets */; };
@@ -92,7 +95,7 @@
 		58138DCF27F8A89E00F959CE /* LoadableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableImageView.swift; sourceTree = "<group>"; };
 		58138DD127F8BB0F00F959CE /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		58138DD327F8BD2D00F959CE /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
-		58138DD527F8BF9000F959CE /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		58138DD527F8BF9000F959CE /* AttributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeView.swift; sourceTree = "<group>"; };
 		58138DD727F8BFCA00F959CE /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		58138DDD27F8C31F00F959CE /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		58138DE327F8C35C00F959CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -107,6 +110,9 @@
 		58138E0427F9122500F959CE /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		58138E0627F912EC00F959CE /* LoadingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingServiceProtocol.swift; sourceTree = "<group>"; };
 		5838FA6327F8757800305E5D /* Throttling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttling.swift; sourceTree = "<group>"; };
+		5859FFAB27F92EA200B6E826 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5859FFAD27F92EB000B6E826 /* SearchSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSort.swift; sourceTree = "<group>"; };
+		5859FFAF27F92EC200B6E826 /* SearchOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchOrder.swift; sourceTree = "<group>"; };
 		58DB20EE27F7C33E00628244 /* Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58DB20F127F7C33E00628244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58DB20F327F7C33E00628244 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -298,7 +304,7 @@
 				58138DC927F89CB600F959CE /* ContentView.swift */,
 				58138DD327F8BD2D00F959CE /* LanguageView.swift */,
 				58138DD127F8BB0F00F959CE /* NameView.swift */,
-				58138DD527F8BF9000F959CE /* StarView.swift */,
+				58138DD527F8BF9000F959CE /* AttributeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -309,6 +315,16 @@
 				5838FA6327F8757800305E5D /* Throttling.swift */,
 			);
 			path = Throttling;
+			sourceTree = "<group>";
+		};
+		5859FFAA27F92E9B00B6E826 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5859FFAB27F92EA200B6E826 /* NetworkError.swift */,
+				5859FFAD27F92EB000B6E826 /* SearchSort.swift */,
+				5859FFAF27F92EC200B6E826 /* SearchOrder.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		58DB20E527F7C33E00628244 = {
@@ -334,14 +350,14 @@
 		58DB20F027F7C33E00628244 /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				58DB214F27F7CFEA00628244 /* Domain */,
-				58DB212227F7C44900628244 /* UI */,
-				58DB212127F7C44400628244 /* Common */,
 				58DB20F127F7C33E00628244 /* AppDelegate.swift */,
 				58DB20F327F7C33E00628244 /* SceneDelegate.swift */,
 				58DB20FA27F7C34000628244 /* Assets.xcassets */,
-				58DB20FC27F7C34000628244 /* LaunchScreen.storyboard */,
 				58DB20FF27F7C34000628244 /* Info.plist */,
+				58DB20FC27F7C34000628244 /* LaunchScreen.storyboard */,
+				58DB212127F7C44400628244 /* Common */,
+				58DB214F27F7CFEA00628244 /* Domain */,
+				58DB212227F7C44900628244 /* UI */,
 			);
 			path = Assignment;
 			sourceTree = "<group>";
@@ -415,6 +431,7 @@
 		58DB213B27F7C7BC00628244 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				5859FFAA27F92E9B00B6E826 /* Components */,
 				58138E0427F9122500F959CE /* NetworkServiceProtocol.swift */,
 				58DB212F27F7C4E600628244 /* NetworkService.swift */,
 			);
@@ -671,7 +688,8 @@
 				58138DB427F87F1800F959CE /* MainScreen+DI.swift in Sources */,
 				58138E0527F9122500F959CE /* NetworkServiceProtocol.swift in Sources */,
 				58DB215C27F7D10000628244 /* Mappable.swift in Sources */,
-				58138DD627F8BF9000F959CE /* StarView.swift in Sources */,
+				58138DD627F8BF9000F959CE /* AttributeView.swift in Sources */,
+				5859FFAE27F92EB000B6E826 /* SearchSort.swift in Sources */,
 				58DB215A27F7D0C200628244 /* SearchItemModelMapping.swift in Sources */,
 				58138DEE27F8E2C400F959CE /* UIView+Extensions.swift in Sources */,
 				58DB214E27F7CEC300628244 /* BaseViewModel.swift in Sources */,
@@ -680,7 +698,9 @@
 				58DB215427F7D04300628244 /* SearchItemModel.swift in Sources */,
 				58DB213327F7C50100628244 /* DependencyInjector.swift in Sources */,
 				58138DD427F8BD2D00F959CE /* LanguageView.swift in Sources */,
+				5859FFAC27F92EA200B6E826 /* NetworkError.swift in Sources */,
 				58138DDE27F8C31F00F959CE /* Strings.swift in Sources */,
+				5859FFB027F92EC200B6E826 /* SearchOrder.swift in Sources */,
 				58138DF027F8E5A200F959CE /* Label.swift in Sources */,
 				58138DC027F88A3E00F959CE /* NSObjectProtocol+Extensions.swift in Sources */,
 				58138DCA27F89CB600F959CE /* ContentView.swift in Sources */,
@@ -1091,7 +1111,7 @@
 			repositoryURL = "https://github.com/stateman92/GH_Assignment_Swagger";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.6;
+				version = 1.0.7;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
