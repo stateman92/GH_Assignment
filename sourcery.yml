@@ -1,0 +1,6 @@
+sources:
+  - ../Assignment
+templates:
+  - ./Templates/AutoMockable.stencil
+output:
+  ../AssignmentTests/Generated

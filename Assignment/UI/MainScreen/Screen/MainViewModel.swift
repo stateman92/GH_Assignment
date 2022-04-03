@@ -14,11 +14,7 @@ final class MainViewModel: BaseViewModel {
     let searchModelSubject = CurrentValueSubject<SearchModel, Never>(.init(items: []))
     let errorSubject = PassthroughSubject<Error, Never>()
     @Throttling(seconds: 0.66) var searchTerm: String = .init()
-    @LazyInjected private var networkService: NetworkServiceProtocol
-    @LazyInjected private var loadingService: LoadingServiceProtocol
-    private var nextPage = 1
-    private let perPage = 10
-    private var fetchingInProgress = false
+    private let pageHandler = PageHandler()
 
     // MARK: Initialization
 
@@ -33,8 +29,7 @@ final class MainViewModel: BaseViewModel {
 extension MainViewModel {
     /// Get the next page of the results.
     func getMoreResults() {
-        guard !fetchingInProgress else { return }
-        fetchingInProgress = true
+        guard pageHandler.fetchIfPossible() else { return }
         searchTermDidChange(searchTerm, newSearch: false)
     }
 
@@ -70,15 +65,15 @@ extension MainViewModel {
             return
         }
         if newSearch {
-            nextPage = 1
+            pageHandler.reset()
             resetModel()
         } else {
-            nextPage += 1
+            pageHandler.incrementPage()
         }
         loadingService.loading { finished in
-            networkService.searchRepositories(searchTerm: searchTerm,
-                                              perPage: perPage,
-                                              page: nextPage) { [weak self] in
+            self.networkService.searchRepositories(searchTerm: searchTerm,
+                                                   perPage: self.pageHandler.objectsPerPage,
+                                                   page: self.pageHandler.nextPage) { [weak self] in
                 finished()
                 self?.handle(searchResult: $0.map(\.mapped))
             }
@@ -86,7 +81,7 @@ extension MainViewModel {
     }
 
     private func handle(searchResult: Result<SearchModel, Error>) {
-        fetchingInProgress = false
+        pageHandler.fetchFinished()
         switch searchResult {
         case let .success(result):
             var items = searchModelSubject.value.items

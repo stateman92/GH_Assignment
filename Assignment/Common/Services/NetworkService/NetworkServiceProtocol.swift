@@ -7,7 +7,7 @@
 
 import Assignment_Swagger
 
-protocol NetworkServiceProtocol {
+protocol NetworkServiceProtocol: AutoMockable {
     /// Search for GitHub repositories.
     /// - Parameters:
     ///   - searchTerm: the query contains one or more search keywords and qualifiers.
