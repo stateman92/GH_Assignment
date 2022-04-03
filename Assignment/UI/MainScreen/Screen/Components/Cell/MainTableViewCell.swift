@@ -8,7 +8,11 @@
 import UIKit
 
 final class MainTableViewCell: UITableViewCell {
+    // MARK: Properties
+
     private let cellContentView = ContentView()
+
+    // MARK: Initialization
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -21,12 +25,16 @@ final class MainTableViewCell: UITableViewCell {
     }
 }
 
+// MARK: - Overridden methods
+
 extension MainTableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
-        cellContentView.prepareForReuse()
+        cellContentView.cancelImageLoading()
     }
 }
+
+// MARK: - Setups
 
 extension MainTableViewCell {
     private func setupUI() {
@@ -37,7 +45,11 @@ extension MainTableViewCell {
     }
 }
 
+// MARK: - Public methods
+
 extension MainTableViewCell {
+    /// Setup the view with a model.
+    /// - Parameter model: the model.
     func setup(with model: SearchItemModel) {
         cellContentView.setup(with: model)
     }

@@ -8,20 +8,24 @@
 import Assignment_Swagger
 
 extension SearchModel: Mappable {
+    /// Create an object from its mapped counterpart.
     init(from mapped: SearchResponseDTO) {
         self.init(items: mapped.items.map(\.mapped))
     }
 
+    /// Get the mapped object.
     var mapped: SearchResponseDTO {
         .init(from: self)
     }
 }
 
 extension SearchResponseDTO: Mappable {
+    /// Create an object from its mapped counterpart.
     init(from mapped: SearchModel) {
         self.init(items: mapped.items.map(\.mapped))
     }
 
+    /// Get the mapped object.
     var mapped: SearchModel {
         .init(from: self)
     }

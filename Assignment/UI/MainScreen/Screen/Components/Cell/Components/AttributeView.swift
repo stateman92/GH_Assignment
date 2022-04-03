@@ -1,5 +1,5 @@
 //
-//  StarView.swift
+//  AttributeView.swift
 //  Assignment
 //
 //  Created by Kristof Kalai on 2022. 04. 02..
@@ -8,11 +8,19 @@
 import UIKit
 import SFSafeSymbols
 
-final class StarView: View {
-    private let label = Label()
-    private let imageView = ImageView()
+final class AttributeView: View {
+    // MARK: Properties
 
-    override init() {
+    private let label = Label()
+    private let imageView: ImageView
+
+    // MARK: Initialization
+
+    init(image: UIImage, tintColor: UIColor) {
+        imageView = ImageView().configure {
+            $0.image = image
+            $0.tintColor = tintColor
+        }
         super.init()
         setupUI()
     }
@@ -20,7 +28,7 @@ final class StarView: View {
 
 // MARK: - Setups
 
-extension StarView {
+extension AttributeView {
     private func setupUI() {
         layer.cornerRadius = 16
         backgroundColor = .systemBackground.withAlphaComponent(0.5)
@@ -41,9 +49,6 @@ extension StarView {
 
     private func setupImageView() {
         imageView.configure {
-            $0.image = UIImage(systemSymbol: .starFill)
-            $0.tintColor = .systemYellow.withAlphaComponent(0.75)
-
             addSubview($0)
 
             $0.anchorToCenterY()
@@ -54,8 +59,12 @@ extension StarView {
     }
 }
 
-extension StarView {
-    func setup(number: Int) {
-        label.text = String(number)
+// MARK: - Public methods
+
+extension AttributeView {
+    /// Setup the view with a text.
+    /// - Parameter text: the text.
+    func setup(text: String) {
+        label.text = text
     }
 }

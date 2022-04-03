@@ -16,7 +16,7 @@ extension UIView {
 
 extension UIView {
     /// Constraint the leading anchor to the superview's leading anchor.
-    /// - Parameter constant: the constant of the constraint.
+    /// - Parameter constant: the constant of the constraint. By default `.zero`.
     func anchorToLeading(constant: CGFloat = .zero) {
         guard let superview = superview else { return }
         usingAutoLayout()
@@ -24,7 +24,7 @@ extension UIView {
     }
 
     /// Constraint the trailing anchor to the superview's trailing anchor.
-    /// - Parameter constant: the constant of the constraint.
+    /// - Parameter constant: the constant of the constraint. By default `.zero`.
     func anchorToTrailing(constant: CGFloat = .zero) {
         guard let superview = superview else { return }
         usingAutoLayout()
@@ -32,7 +32,7 @@ extension UIView {
     }
 
     /// Constraint the bottom anchor to the superview's bottom anchor.
-    /// - Parameter constant: the constant of the constraint.
+    /// - Parameter constant: the constant of the constraint. By default `.zero`.
     func anchorToBottom(constant: CGFloat = .zero) {
         guard let superview = superview else { return }
         usingAutoLayout()
@@ -40,7 +40,7 @@ extension UIView {
     }
 
     /// Constraint the top anchor to the superview's top anchor.
-    /// - Parameter constant: the constant of the constraint.
+    /// - Parameter constant: the constant of the constraint. By default `.zero`.
     func anchorToTop(constant: CGFloat = .zero) {
         guard let superview = superview else { return }
         usingAutoLayout()
@@ -48,7 +48,7 @@ extension UIView {
     }
 
     /// Constraint the center y anchor to the superview's center y anchor.
-    /// - Parameter constant: the constant of the constraint.
+    /// - Parameter constant: the constant of the constraint. By default `.zero`.
     func anchorToCenterY(constant: CGFloat = .zero) {
         guard let superview = superview else { return }
         usingAutoLayout()
@@ -56,7 +56,7 @@ extension UIView {
     }
 
     /// Constraint the center x anchor to the superview's center x anchor.
-    /// - Parameter constant: the constant of the constraint.
+    /// - Parameter constant: the constant of the constraint. By default `.zero`.
     func anchorToCenterX(constant: CGFloat = .zero) {
         guard let superview = superview else { return }
         usingAutoLayout()
@@ -93,10 +93,10 @@ extension UIView {
     }
 
     /// Constraint the view's anchors to the superview's anchors.
-    /// - Parameter top: the constant of the top constraint. If nil, it will be ignored. By default nil.
-    /// - Parameter bottom: the constant of the constraint. If nil, it will be ignored. By default nil.
-    /// - Parameter leading: the constant of the constraint. If nil, it will be ignored. By default nil.
-    /// - Parameter trailing: the constant of the constraint. If nil, it will be ignored. By default nil.
+    /// - Parameter top: the constant of the top constraint. If nil, it will be ignored. By default `nil`.
+    /// - Parameter bottom: the constant of the constraint. If nil, it will be ignored. By default `nil`.
+    /// - Parameter leading: the constant of the constraint. If nil, it will be ignored. By default `nil`.
+    /// - Parameter trailing: the constant of the constraint. If nil, it will be ignored. By default `nil`.
     func anchorToSuperview(top: CGFloat? = nil,
                            bottom: CGFloat? = nil,
                            leading: CGFloat? = nil,

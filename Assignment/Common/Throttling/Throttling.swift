@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A property wrapper for a value that should be throttled.
 @propertyWrapper final class Throttling<T> {
     // MARK: Properties
 
@@ -26,6 +27,7 @@ import Foundation
         }
     }
 
+    /// The property wrapper.
     var projectedValue: Throttling<T> {
         self
     }
@@ -41,10 +43,14 @@ import Foundation
 // MARK: - Public methods
 
 extension Throttling {
+    /// Call the receive a callback if a value should be processed.
+    /// - Parameter throttled: in this closure the value has already throttled.
     func on(throttled: @escaping (T) -> Void) {
         callback = throttled
     }
 
+    /// Force a value to be processed. Be careful, it can put some weight on your code (and performance).
+    /// - Parameter value: the new value.
     func force(value: T) {
         timer?.invalidate()
         wrappedValue = value

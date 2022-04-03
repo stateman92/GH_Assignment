@@ -8,6 +8,8 @@
 import UIKit
 
 final class MainScreen: BaseTableScreen<MainViewModel> {
+    // MARK: Properties
+
     private let searchController = UISearchController(searchResultsController: nil)
     private let emptyStateView = EmptyStateView()
 }

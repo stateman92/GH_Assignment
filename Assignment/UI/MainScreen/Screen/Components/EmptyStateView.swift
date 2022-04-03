@@ -8,13 +8,19 @@
 import Lottie
 
 final class EmptyStateView: View {
+    // MARK: Properties
+
     private let lottie = AnimationView(name: "searching")
+
+    // MARK: Initialization
 
     override init() {
         super.init()
         setupUI()
     }
 }
+
+// MARK: - Setups
 
 extension EmptyStateView {
     private func setupUI() {
@@ -34,11 +40,15 @@ extension EmptyStateView {
     }
 }
 
+// MARK: - Public methods
+
 extension EmptyStateView {
+    /// Play the animation.
     func play() {
         lottie.play()
     }
 
+    /// Pause the animation.
     func pause() {
         lottie.pause()
     }
