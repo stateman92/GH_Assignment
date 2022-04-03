@@ -8,13 +8,15 @@
 import Foundation
 
 /// A property wrapper for a value that should be throttled.
-@propertyWrapper final class Throttling<T> {
+@propertyWrapper final class Throttling<T> where T: Equatable {
     // MARK: Properties
 
     private var value: T
     private var callback: (T) -> Void = { _ in }
     private var timer: Timer?
     private let timeInterval: TimeInterval
+    private let justDistinctValues: Bool
+    private var lastSentValue: T?
 
     /// The actual value (without throttling).
     var wrappedValue: T {
@@ -34,9 +36,10 @@ import Foundation
 
     // MARK: Initialization
 
-    init(wrappedValue: T, seconds: TimeInterval) {
+    init(wrappedValue: T, seconds: TimeInterval, justDistinctValues: Bool = true) {
         value = wrappedValue
         timeInterval = seconds
+        self.justDistinctValues = justDistinctValues
     }
 }
 
@@ -64,8 +67,16 @@ extension Throttling {
     private func throttling(timeInterval: TimeInterval) {
         timer?.invalidate()
         timer = .scheduledTimer(withTimeInterval: timeInterval, repeats: false) { [weak self] _ in
-            guard let self = self else { return }
+            guard let self = self, self.shouldSend() else { return }
+            self.lastSentValue = self.value
             self.callback(self.value)
         }
+    }
+
+    private func shouldSend() -> Bool {
+        if justDistinctValues {
+            return lastSentValue != value
+        }
+        return true
     }
 }

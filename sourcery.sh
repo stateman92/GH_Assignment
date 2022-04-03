@@ -1,0 +1,1 @@
+sourcery --sources Assignment --templates AutoMockable.stencil --output AssignmentTests/Generated/

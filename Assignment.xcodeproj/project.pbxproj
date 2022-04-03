@@ -39,6 +39,10 @@
 		5859FFAC27F92EA200B6E826 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859FFAB27F92EA200B6E826 /* NetworkError.swift */; };
 		5859FFAE27F92EB000B6E826 /* SearchSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859FFAD27F92EB000B6E826 /* SearchSort.swift */; };
 		5859FFB027F92EC200B6E826 /* SearchOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859FFAF27F92EC200B6E826 /* SearchOrder.swift */; };
+		5860C2BF27F9E10F00715B43 /* AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860C2BE27F9E10F00715B43 /* AutoMockable.swift */; };
+		589E0B1927F9E3D3008EBD11 /* NetworkServiceProtocol+AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589E0B1627F9E3D3008EBD11 /* NetworkServiceProtocol+AutoMockable.generated.swift */; };
+		589E0B1A27F9E3D3008EBD11 /* Navigator+AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589E0B1727F9E3D3008EBD11 /* Navigator+AutoMockable.generated.swift */; };
+		589E0B1B27F9E3D3008EBD11 /* LoadingServiceProtocol+AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589E0B1827F9E3D3008EBD11 /* LoadingServiceProtocol+AutoMockable.generated.swift */; };
 		58DB20F227F7C33E00628244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB20F127F7C33E00628244 /* AppDelegate.swift */; };
 		58DB20F427F7C33E00628244 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB20F327F7C33E00628244 /* SceneDelegate.swift */; };
 		58DB20FB27F7C34000628244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58DB20FA27F7C34000628244 /* Assets.xcassets */; };
@@ -63,6 +67,7 @@
 		58DB215E27F7D15400628244 /* SearchItemOwnerModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB215D27F7D15400628244 /* SearchItemOwnerModelMapping.swift */; };
 		58DB216027F7D1DE00628244 /* SearchModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB215F27F7D1DE00628244 /* SearchModelMapping.swift */; };
 		58DB216627F7D3F100628244 /* Assignment-Swagger in Frameworks */ = {isa = PBXBuildFile; productRef = 58DB216527F7D3F100628244 /* Assignment-Swagger */; };
+		58E9312227F9CA1200DB1C4E /* PageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9312127F9CA1200DB1C4E /* PageHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +118,10 @@
 		5859FFAB27F92EA200B6E826 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5859FFAD27F92EB000B6E826 /* SearchSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSort.swift; sourceTree = "<group>"; };
 		5859FFAF27F92EC200B6E826 /* SearchOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchOrder.swift; sourceTree = "<group>"; };
+		5860C2BE27F9E10F00715B43 /* AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
+		589E0B1627F9E3D3008EBD11 /* NetworkServiceProtocol+AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkServiceProtocol+AutoMockable.generated.swift"; sourceTree = "<group>"; };
+		589E0B1727F9E3D3008EBD11 /* Navigator+AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Navigator+AutoMockable.generated.swift"; sourceTree = "<group>"; };
+		589E0B1827F9E3D3008EBD11 /* LoadingServiceProtocol+AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoadingServiceProtocol+AutoMockable.generated.swift"; sourceTree = "<group>"; };
 		58DB20EE27F7C33E00628244 /* Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58DB20F127F7C33E00628244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58DB20F327F7C33E00628244 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +148,7 @@
 		58DB215B27F7D10000628244 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		58DB215D27F7D15400628244 /* SearchItemOwnerModelMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemOwnerModelMapping.swift; sourceTree = "<group>"; };
 		58DB215F27F7D1DE00628244 /* SearchModelMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelMapping.swift; sourceTree = "<group>"; };
+		58E9312127F9CA1200DB1C4E /* PageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +241,7 @@
 			children = (
 				58138DFB27F8F22200F959CE /* Cell */,
 				58138DFD27F8FB8D00F959CE /* EmptyStateView.swift */,
+				58E9312127F9CA1200DB1C4E /* PageHandler.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -239,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				58138DF127F8E62C00F959CE /* ImageView */,
-				58138DF827F8EE7A00F959CE /* Navigation */,
 				58138DEF27F8E5A200F959CE /* Label.swift */,
 				58138DD727F8BFCA00F959CE /* View.swift */,
 			);
@@ -327,6 +337,16 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		589E0B1527F9E3D3008EBD11 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				589E0B1627F9E3D3008EBD11 /* NetworkServiceProtocol+AutoMockable.generated.swift */,
+				589E0B1727F9E3D3008EBD11 /* Navigator+AutoMockable.generated.swift */,
+				589E0B1827F9E3D3008EBD11 /* LoadingServiceProtocol+AutoMockable.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		58DB20E527F7C33E00628244 = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +385,7 @@
 		58DB210727F7C34000628244 /* AssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				589E0B1527F9E3D3008EBD11 /* Generated */,
 				58DB210827F7C34000628244 /* AssignmentTests.swift */,
 			);
 			path = AssignmentTests;
@@ -406,7 +427,9 @@
 			isa = PBXGroup;
 			children = (
 				58138DB527F8849A00F959CE /* LoadingService */,
+				58138DF827F8EE7A00F959CE /* Navigation */,
 				58DB213B27F7C7BC00628244 /* NetworkService */,
+				5860C2BE27F9E10F00715B43 /* AutoMockable.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -684,10 +707,12 @@
 			files = (
 				58138DC827F890E100F959CE /* MainTableViewCell.swift in Sources */,
 				58138DD827F8BFCA00F959CE /* View.swift in Sources */,
+				5860C2BF27F9E10F00715B43 /* AutoMockable.swift in Sources */,
 				58DB214727F7CE3600628244 /* MainScreen.swift in Sources */,
 				58138DB427F87F1800F959CE /* MainScreen+DI.swift in Sources */,
 				58138E0527F9122500F959CE /* NetworkServiceProtocol.swift in Sources */,
 				58DB215C27F7D10000628244 /* Mappable.swift in Sources */,
+				58E9312227F9CA1200DB1C4E /* PageHandler.swift in Sources */,
 				58138DD627F8BF9000F959CE /* AttributeView.swift in Sources */,
 				5859FFAE27F92EB000B6E826 /* SearchSort.swift in Sources */,
 				58DB215A27F7D0C200628244 /* SearchItemModelMapping.swift in Sources */,
@@ -733,6 +758,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				589E0B1927F9E3D3008EBD11 /* NetworkServiceProtocol+AutoMockable.generated.swift in Sources */,
+				589E0B1A27F9E3D3008EBD11 /* Navigator+AutoMockable.generated.swift in Sources */,
+				589E0B1B27F9E3D3008EBD11 /* LoadingServiceProtocol+AutoMockable.generated.swift in Sources */,
 				58DB210927F7C34000628244 /* AssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -967,6 +995,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7KJTVFSV88;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -986,6 +1015,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7KJTVFSV88;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -1004,6 +1034,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7KJTVFSV88;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hu.bme.aut.AssignmentUITests;
@@ -1021,6 +1052,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7KJTVFSV88;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hu.bme.aut.AssignmentUITests;

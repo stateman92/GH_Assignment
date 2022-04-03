@@ -8,7 +8,7 @@
 import Combine
 
 /// A protocol for managing the loading states.
-protocol LoadingServiceProtocol {
+protocol LoadingServiceProtocol: AutoMockable {
     /// A publisher which emits values when the application's loading state changes.
     var state: AnyPublisher<Bool, Never> { get }
 
@@ -18,5 +18,7 @@ protocol LoadingServiceProtocol {
 
     /// Set the loading state to true, do some work in the closure, and then call the parameter in the closure.
     /// - Parameter during: the closure in which the work is being done.
-    func loading(during closure: (@escaping () -> Void) -> Void)
+    /// - Note: the closure marked with @escaping (for mocking).
+    /// But it's guaranteed that it will be called synchronously. 
+    func loading(during closure: @escaping (@escaping () -> Void) -> Void)
 }
