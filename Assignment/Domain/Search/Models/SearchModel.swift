@@ -8,3 +8,9 @@
 struct SearchModel {
     let items: [SearchItemModel]
 }
+
+extension SearchModel: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        zip(lhs.items, rhs.items).allSatisfy { $0.0 == $0.1 }
+    }
+}

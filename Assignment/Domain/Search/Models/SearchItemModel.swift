@@ -15,3 +15,9 @@ struct SearchItemModel {
     let url: String
     let forks: Int
 }
+
+extension SearchItemModel: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id
+    }
+}

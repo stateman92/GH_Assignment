@@ -20,11 +20,6 @@ extension DependencyInjector {
     static func registerDependencies() {
         registerModules()
         registerServices()
-
-        resolver
-            .register { UINavigationController(rootViewController: resolve() as MainScreen) }
-            .implements(Navigator.self)
-            .scope(.shared)
     }
 
     /// Resolve a given type of dependency.
@@ -41,5 +36,10 @@ extension DependencyInjector {
     private static func registerServices() {
         resolver.register { NetworkService() }.implements(NetworkServiceProtocol.self)
         resolver.register { LoadingService() }.implements(LoadingServiceProtocol.self).scope(.shared)
+
+        resolver
+            .register { UINavigationController(rootViewController: resolve() as MainScreen) }
+            .implements(Navigator.self)
+            .scope(.shared)
     }
 }

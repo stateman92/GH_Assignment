@@ -21,6 +21,7 @@ extension LoadingService: LoadingServiceProtocol {
     /// Set the loading state of the application.
     /// - Parameter showing: whether the loading should be shown.
     func setState(isShowing showing: Bool) {
+        guard isShowing.value != showing else { return }
         isShowing.send(showing)
     }
 
