@@ -15,8 +15,8 @@ import Foundation
     private var callback: (T) -> Void = { _ in }
     private var timer: Timer?
     private let timeInterval: TimeInterval
-    private let justDistinctValues: Bool
     private var lastSentValue: T?
+    var justDistinctValues = true
 
     /// The actual value (without throttling).
     var wrappedValue: T {
@@ -25,7 +25,7 @@ import Foundation
         }
         set {
             value = newValue
-            throttling(timeInterval: timeInterval)
+            throttling()
         }
     }
 
@@ -36,10 +36,9 @@ import Foundation
 
     // MARK: Initialization
 
-    init(wrappedValue: T, seconds: TimeInterval, justDistinctValues: Bool = true) {
+    init(wrappedValue: T, seconds: TimeInterval) {
         value = wrappedValue
         timeInterval = seconds
-        self.justDistinctValues = justDistinctValues
     }
 }
 
@@ -57,20 +56,25 @@ extension Throttling {
     func force(value: T) {
         timer?.invalidate()
         wrappedValue = value
-        throttling(timeInterval: .zero)
+        sendValue()
     }
 }
 
 // MARK: - Private methods
 
 extension Throttling {
-    private func throttling(timeInterval: TimeInterval) {
+    private func throttling() {
         timer?.invalidate()
         timer = .scheduledTimer(withTimeInterval: timeInterval, repeats: false) { [weak self] _ in
-            guard let self = self, self.shouldSend() else { return }
-            self.lastSentValue = self.value
-            self.callback(self.value)
+            self?.sendValue()
         }
+    }
+
+    private func sendValue() {
+        timer?.invalidate()
+        guard shouldSend() else { return }
+        lastSentValue = value
+        callback(value)
     }
 
     private func shouldSend() -> Bool {
