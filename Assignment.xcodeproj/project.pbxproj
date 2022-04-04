@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5811224B27FA623A0013CD07 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5811224A27FA623A0013CD07 /* MainViewModelTests.swift */; };
+		5811224D27FA63FE0013CD07 /* Mock+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5811224C27FA63FE0013CD07 /* Mock+DI.swift */; };
+		5811224F27FA647F0013CD07 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5811224E27FA647F0013CD07 /* BaseTestCase.swift */; };
+		5811225427FB28210013CD07 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5811225327FB28210013CD07 /* XCTestCase+Extensions.swift */; };
+		5811225627FB288A0013CD07 /* PageHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5811225527FB288A0013CD07 /* PageHandlerTests.swift */; };
+		5811225B27FB2C8B0013CD07 /* LoadingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5811225A27FB2C8B0013CD07 /* LoadingServiceTests.swift */; };
 		58138DB427F87F1800F959CE /* MainScreen+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138DB327F87F1800F959CE /* MainScreen+DI.swift */; };
 		58138DB727F884F400F959CE /* LoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138DB627F884F400F959CE /* LoadingService.swift */; };
 		58138DBA27F888DB00F959CE /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58138DB927F888DB00F959CE /* LoadingOverlay.swift */; };
@@ -47,7 +53,6 @@
 		58DB20F427F7C33E00628244 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB20F327F7C33E00628244 /* SceneDelegate.swift */; };
 		58DB20FB27F7C34000628244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58DB20FA27F7C34000628244 /* Assets.xcassets */; };
 		58DB20FE27F7C34000628244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58DB20FC27F7C34000628244 /* LaunchScreen.storyboard */; };
-		58DB210927F7C34000628244 /* AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB210827F7C34000628244 /* AssignmentTests.swift */; };
 		58DB211327F7C34000628244 /* AssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB211227F7C34000628244 /* AssignmentUITests.swift */; };
 		58DB211527F7C34000628244 /* AssignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB211427F7C34000628244 /* AssignmentUITestsLaunchTests.swift */; };
 		58DB212C27F7C4B100628244 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 58DB212B27F7C4B100628244 /* Resolver */; };
@@ -88,6 +93,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5811224A27FA623A0013CD07 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		5811224C27FA63FE0013CD07 /* Mock+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mock+DI.swift"; sourceTree = "<group>"; };
+		5811224E27FA647F0013CD07 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		5811225327FB28210013CD07 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
+		5811225527FB288A0013CD07 /* PageHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHandlerTests.swift; sourceTree = "<group>"; };
+		5811225A27FB2C8B0013CD07 /* LoadingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingServiceTests.swift; sourceTree = "<group>"; };
 		58138DB327F87F1800F959CE /* MainScreen+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainScreen+DI.swift"; sourceTree = "<group>"; };
 		58138DB627F884F400F959CE /* LoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingService.swift; sourceTree = "<group>"; };
 		58138DB927F888DB00F959CE /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
@@ -129,7 +140,6 @@
 		58DB20FD27F7C34000628244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58DB20FF27F7C34000628244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58DB210427F7C34000628244 /* AssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		58DB210827F7C34000628244 /* AssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTests.swift; sourceTree = "<group>"; };
 		58DB210E27F7C34000628244 /* AssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58DB211227F7C34000628244 /* AssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentUITests.swift; sourceTree = "<group>"; };
 		58DB211427F7C34000628244 /* AssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -181,6 +191,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5811225027FA65070013CD07 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5811224E27FA647F0013CD07 /* BaseTestCase.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5811225127FA650D0013CD07 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				5811224C27FA63FE0013CD07 /* Mock+DI.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		5811225227FB28100013CD07 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5811225327FB28210013CD07 /* XCTestCase+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5811225727FB2B920013CD07 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5811225927FB2BD80013CD07 /* ServiceTests */,
+				5811225827FB2B9C0013CD07 /* ViewModelTests */,
+				5811225527FB288A0013CD07 /* PageHandlerTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		5811225827FB2B9C0013CD07 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				5811224A27FA623A0013CD07 /* MainViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		5811225927FB2BD80013CD07 /* ServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				5811225A27FB2C8B0013CD07 /* LoadingServiceTests.swift */,
+			);
+			path = ServiceTests;
+			sourceTree = "<group>";
+		};
 		58138DB127F87EFF00F959CE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,8 +445,11 @@
 		58DB210727F7C34000628244 /* AssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				5811225727FB2B920013CD07 /* Tests */,
+				5811225227FB28100013CD07 /* Extensions */,
+				5811225127FA650D0013CD07 /* DI */,
+				5811225027FA65070013CD07 /* Base */,
 				589E0B1527F9E3D3008EBD11 /* Generated */,
-				58DB210827F7C34000628244 /* AssignmentTests.swift */,
 			);
 			path = AssignmentTests;
 			sourceTree = "<group>";
@@ -760,8 +823,13 @@
 			files = (
 				589E0B1927F9E3D3008EBD11 /* NetworkServiceProtocol+AutoMockable.generated.swift in Sources */,
 				589E0B1A27F9E3D3008EBD11 /* Navigator+AutoMockable.generated.swift in Sources */,
+				5811225427FB28210013CD07 /* XCTestCase+Extensions.swift in Sources */,
 				589E0B1B27F9E3D3008EBD11 /* LoadingServiceProtocol+AutoMockable.generated.swift in Sources */,
-				58DB210927F7C34000628244 /* AssignmentTests.swift in Sources */,
+				5811224F27FA647F0013CD07 /* BaseTestCase.swift in Sources */,
+				5811224D27FA63FE0013CD07 /* Mock+DI.swift in Sources */,
+				5811224B27FA623A0013CD07 /* MainViewModelTests.swift in Sources */,
+				5811225B27FB2C8B0013CD07 /* LoadingServiceTests.swift in Sources */,
+				5811225627FB288A0013CD07 /* PageHandlerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
