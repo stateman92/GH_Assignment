@@ -6,9 +6,6 @@
 //
 
 extension DependencyInjector {
-    /// Register the main module's classes.
-    static func registerMainModule() {
-        resolver.register { MainScreen() }
-        resolver.register { MainViewModel() }
-    }
+    static let mainScreen = create { MainScreen() }
+    static let mainViewModel = create { MainViewModel() }
 }

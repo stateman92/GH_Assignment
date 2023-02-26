@@ -10,7 +10,7 @@ import Lottie
 final class EmptyStateView: View {
     // MARK: Properties
 
-    private let lottie = AnimationView(name: "searching")
+    private let lottie = LottieAnimationView(name: "searching")
 
     // MARK: Initialization
 

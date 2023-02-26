@@ -10,10 +10,10 @@ import Assignment_Swagger
 extension SearchItemModel: Mappable {
     /// Create an object from its mapped counterpart.
     init(from mapped: SearchResponseItemDTO) {
-        self.init(id: mapped._id,
+        self.init(id: mapped.id,
                   name: mapped.name,
                   owner: mapped.owner.mapped,
-                  description: mapped._description,
+                  description: mapped.description,
                   language: mapped.language,
                   stars: mapped.stargazersCount,
                   url: mapped.htmlUrl,
@@ -29,10 +29,10 @@ extension SearchItemModel: Mappable {
 extension SearchResponseItemDTO: Mappable {
     /// Create an object from its mapped counterpart.
     init(from mapped: SearchItemModel) {
-        self.init(_id: mapped.id,
+        self.init(id: mapped.id,
                   name: mapped.name,
                   owner: mapped.owner.mapped,
-                  _description: mapped.description,
+                  description: mapped.description,
                   language: mapped.language,
                   stargazersCount: mapped.stars,
                   htmlUrl: mapped.url,

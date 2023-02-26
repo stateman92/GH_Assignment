@@ -9,12 +9,3 @@ import XCTest
 @testable import Assignment
 
 class BaseTestCase: XCTestCase { }
-
-// MARK: - Overridden methods
-
-extension BaseTestCase {
-    override class func setUp() {
-        super.setUp()
-        DependencyInjector.registerDependenciesForTests()
-    }
-}

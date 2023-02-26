@@ -19,14 +19,15 @@ struct AppLoader {
 extension AppLoader {
     /// Setup the necessary business logic-related things.
     func setup() {
-        DependencyInjector.registerDependencies()
+        // no-op
     }
 
     /// Setup the necessary UI-related things.
     /// - Parameter windowScene: the window scene in which the app runs.
     /// - Returns: the window which is made key and visible.
     func setupUI(in windowScene: UIWindowScene) -> UIWindow? {
-        let navigator: Navigator = DependencyInjector.resolve()
+        @LazyInjected(DependencyInjector.navigationController) var navigator
+
         guard let navigationController = navigator as? UINavigationController else { return nil }
 
         navigationController.navigationBar.prefersLargeTitles = true

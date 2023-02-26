@@ -1,61 +1,59 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Alamofire",
-        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
-        "state": {
-          "branch": null,
-          "revision": "747c8db8d57b68d5e35275f10c92d55f982adbd4",
-          "version": "4.9.1"
-        }
-      },
-      {
-        "package": "Assignment-Swagger",
-        "repositoryURL": "https://github.com/stateman92/GH_Assignment_Swagger",
-        "state": {
-          "branch": null,
-          "revision": "e7889a1181cba9ef68a23fbdec0f6baf6860550a",
-          "version": "1.0.7"
-        }
-      },
-      {
-        "package": "Kingfisher",
-        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
-        "state": {
-          "branch": null,
-          "revision": "32e4acdf6971f58f5ad552389cf2d7d016334eaf",
-          "version": "7.2.0"
-        }
-      },
-      {
-        "package": "Lottie",
-        "repositoryURL": "https://github.com/airbnb/lottie-ios.git",
-        "state": {
-          "branch": null,
-          "revision": "4a6058cbbdfe4f74aeae92c8bd51ad3b0de2a1ee",
-          "version": "3.3.0"
-        }
-      },
-      {
-        "package": "Resolver",
-        "repositoryURL": "https://github.com/hmlongco/Resolver",
-        "state": {
-          "branch": null,
-          "revision": "97de0b0320036607564af4a60025b48f8d041221",
-          "version": "1.5.0"
-        }
-      },
-      {
-        "package": "SFSafeSymbols",
-        "repositoryURL": "https://github.com/SFSafeSymbols/SFSafeSymbols",
-        "state": {
-          "branch": null,
-          "revision": "c61de7a6e9eb1520d32316b06d5932accd974e70",
-          "version": "2.1.3"
-        }
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "78424be314842833c04bc3bef5b72e85fff99204",
+        "version" : "5.6.4"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "factory",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Factory",
+      "state" : {
+        "revision" : "39ff6a675cd0272d833d184d35add0f8fddd63de",
+        "version" : "1.3.7"
+      }
+    },
+    {
+      "identity" : "gh_assignment_swagger",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stateman92/GH_Assignment_Swagger",
+      "state" : {
+        "revision" : "29f0bd59ac615c6faecbac25c4fec1ffe59ede20",
+        "version" : "1.0.8"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "af4be924ad984cf4d16f4ae4df424e79a443d435",
+        "version" : "7.6.2"
+      }
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios.git",
+      "state" : {
+        "revision" : "4e51b71c6ef1b645c9a83de112d627c919143137",
+        "version" : "4.1.3"
+      }
+    },
+    {
+      "identity" : "sfsafesymbols",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SFSafeSymbols/SFSafeSymbols",
+      "state" : {
+        "revision" : "7cca2d60925876b5953a2cf7341cd80fbeac983c",
+        "version" : "4.1.1"
+      }
+    }
+  ],
+  "version" : 2
 }

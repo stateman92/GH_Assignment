@@ -11,8 +11,7 @@ import Combine
 class BaseTableScreen<ViewModel: BaseViewModel>: UITableViewController {
     // MARK: Properties
 
-    @LazyInjected private var loadingService: LoadingServiceProtocol
-    @LazyInjected var viewModel: ViewModel
+    @LazyInjected(DependencyInjector.loadingService) private var loadingService
     var cancellables = Set<AnyCancellable>()
 
     // MARK: - Lifecycle

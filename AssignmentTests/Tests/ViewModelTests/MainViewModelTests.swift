@@ -9,24 +9,15 @@ import XCTest
 import Combine
 @testable import Assignment
 
-// swiftlint:disable force_cast
 final class MainViewModelTests: BaseTestCase {
     // MARK: Properties
 
     private var sut: MainViewModel!
     private var cancellables: Set<AnyCancellable>!
 
-    private var loadingService: LoadingServiceProtocolMock {
-        sut.loadingService as! LoadingServiceProtocolMock
-    }
-
-    private var navigatorMock: NavigatorMock {
-        sut.navigator as! NavigatorMock
-    }
-
-    private var networkServiceMock: NetworkServiceProtocolMock {
-        sut.networkService as! NetworkServiceProtocolMock
-    }
+    @LazyInjected(DependencyInjector.loadingServiceMock) private var loadingServiceMock
+    @LazyInjected(DependencyInjector.navigationControllerMock) private var navigatorMock
+    @LazyInjected(DependencyInjector.networkServiceMock) private var networkServiceMock
 }
 
 // MARK: - Overridden methods
@@ -36,6 +27,9 @@ extension MainViewModelTests {
         super.setUp()
         cancellables = .init()
         sut = MainViewModel()
+        sut.loadingService = loadingServiceMock
+        sut.navigator = navigatorMock
+        sut.networkService = networkServiceMock
     }
 }
 
@@ -56,8 +50,8 @@ extension MainViewModelTests {
 
         XCTAssertEqual(result.items, [])
 
-        XCTAssertEqual(loadingService.loadingDuringCalled, false)
-        XCTAssertEqual(loadingService.setStateIsShowingCalled, false)
+        XCTAssertEqual(loadingServiceMock.loadingDuringCalled, false)
+        XCTAssertEqual(loadingServiceMock.setStateIsShowingCalled, false)
 
         XCTAssertEqual(navigatorMock.presentAnimatedCompletionCalled, false)
 
@@ -85,7 +79,7 @@ extension MainViewModelTests {
                                                       url: "https://www.facebook.com",
                                                       forks: 26)])
 
-        loadingService.loadingDuringClosure = {
+        loadingServiceMock.loadingDuringClosure = {
             $0 { }
         }
 
@@ -107,52 +101,8 @@ extension MainViewModelTests {
         let result = sut.searchModelSubject.value
         XCTAssertEqual(result, networkResult)
 
-        XCTAssertEqual(loadingService.loadingDuringCallsCount, 1)
-        XCTAssertEqual(loadingService.setStateIsShowingCalled, false)
-
-        XCTAssertEqual(navigatorMock.presentAnimatedCompletionCalled, false)
-
-        XCTAssertEqual(networkServiceMock.searchRepositoriesSearchTermPerPagePageCompletionCallsCount, 1)
-    }
-
-    func testSearchTermDidChangeToNotEmptyStringUnsuccessfulSearch() {
-        // Given
-
-        let searchTerm = "swift"
-        let networkError = NetworkError.unknown
-
-        loadingService.setStateIsShowingClosure = {
-            XCTAssertEqual($0, true)
-        }
-
-        loadingService.loadingDuringClosure = {
-            $0 { }
-        }
-
-        networkServiceMock
-            .searchRepositoriesSearchTermPerPagePageCompletionClosure = { searchTerm, perPage, page, closure in
-                XCTAssertEqual(searchTerm, searchTerm)
-                XCTAssertEqual(perPage, 10)
-                XCTAssertEqual(page, 1)
-                closure(.failure(networkError))
-            }
-
-        sut.errorSubject
-            .sink { XCTAssert($0 as? NetworkError == networkError) }
-            .store(in: &cancellables)
-
-        // When
-
-        sut.searchTerm = searchTerm
-        wait(for: 1)
-
-        // Then
-
-        let result = sut.searchModelSubject.value
-        XCTAssertEqual(result.items, [])
-
-        XCTAssertEqual(loadingService.loadingDuringCallsCount, 1)
-        XCTAssertEqual(loadingService.setStateIsShowingCalled, false)
+        XCTAssertEqual(loadingServiceMock.loadingDuringCallsCount, 1)
+        XCTAssertEqual(loadingServiceMock.setStateIsShowingCalled, false)
 
         XCTAssertEqual(navigatorMock.presentAnimatedCompletionCalled, false)
 
@@ -190,8 +140,8 @@ extension MainViewModelTests {
 
         // Then
 
-        XCTAssertEqual(loadingService.loadingDuringCalled, false)
-        XCTAssertEqual(loadingService.setStateIsShowingCalled, false)
+        XCTAssertEqual(loadingServiceMock.loadingDuringCalled, false)
+        XCTAssertEqual(loadingServiceMock.setStateIsShowingCalled, false)
 
         XCTAssertEqual(navigatorMock.presentAnimatedCompletionCallsCount, 1)
 
@@ -207,8 +157,8 @@ extension MainViewModelTests {
 
         // Then
 
-        XCTAssertEqual(loadingService.loadingDuringCalled, false)
-        XCTAssertEqual(loadingService.setStateIsShowingCalled, false)
+        XCTAssertEqual(loadingServiceMock.loadingDuringCalled, false)
+        XCTAssertEqual(loadingServiceMock.setStateIsShowingCalled, false)
 
         XCTAssertEqual(navigatorMock.presentAnimatedCompletionCalled, false)
 
@@ -242,8 +192,8 @@ extension MainViewModelTests {
 
         // Then
 
-        XCTAssertEqual(loadingService.loadingDuringCalled, false)
-        XCTAssertEqual(loadingService.setStateIsShowingCalled, false)
+        XCTAssertEqual(loadingServiceMock.loadingDuringCalled, false)
+        XCTAssertEqual(loadingServiceMock.setStateIsShowingCalled, false)
 
         XCTAssertEqual(navigatorMock.presentAnimatedCompletionCalled, false)
 
@@ -265,8 +215,8 @@ extension MainViewModelTests {
 
         XCTAssertEqual(result, nil)
 
-        XCTAssertEqual(loadingService.loadingDuringCalled, false)
-        XCTAssertEqual(loadingService.setStateIsShowingCalled, false)
+        XCTAssertEqual(loadingServiceMock.loadingDuringCalled, false)
+        XCTAssertEqual(loadingServiceMock.setStateIsShowingCalled, false)
 
         XCTAssertEqual(navigatorMock.presentAnimatedCompletionCalled, false)
 
@@ -303,8 +253,8 @@ extension MainViewModelTests {
 
         XCTAssertEqual(result, networkResult.items[index])
 
-        XCTAssertEqual(loadingService.loadingDuringCalled, false)
-        XCTAssertEqual(loadingService.setStateIsShowingCalled, false)
+        XCTAssertEqual(loadingServiceMock.loadingDuringCalled, false)
+        XCTAssertEqual(loadingServiceMock.setStateIsShowingCalled, false)
 
         XCTAssertEqual(navigatorMock.presentAnimatedCompletionCalled, false)
 

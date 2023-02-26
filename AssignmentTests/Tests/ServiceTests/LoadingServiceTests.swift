@@ -12,7 +12,7 @@ import XCTest
 final class LoadingServiceTests: XCTestCase {
     // MARK: Properties
 
-    private var sut: LoadingServiceProtocol!
+    private var sut: LoadingService!
     private var cancellables: Set<AnyCancellable>!
 }
 
@@ -22,7 +22,7 @@ extension LoadingServiceTests {
     override func setUp() {
         super.setUp()
         cancellables = .init()
-        sut = LoadingService()
+        sut = LoadingServiceImpl()
     }
 }
 

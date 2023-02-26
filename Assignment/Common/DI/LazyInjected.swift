@@ -5,15 +5,32 @@
 //  Created by Kristof Kalai on 2022. 04. 02..
 //
 
-/// A thin layer between the application and the DI library (Resolver).
+import Factory
+
+/// A thin layer between the application and the DI library (Factory).
 /// The dependency will be resolver lazily (at the first time you want to use).
-@propertyWrapper struct LazyInjected<Service> {
-    private lazy var service: Service = DependencyInjector.resolve()
+@propertyWrapper struct LazyInjected<T> {
+    private var factory: Factory<T>
+    private var dependency: T!
+    private var initialize = true
+
+    init(_ factory: Factory<T>) {
+        self.factory = factory
+    }
 
     /// The injected object.
-    var wrappedValue: Service {
-        mutating get { service }
-        mutating set { service = newValue }
+    var wrappedValue: T {
+        mutating get {
+            if initialize {
+                initialize = false
+                dependency = factory()
+            }
+            return dependency
+        }
+        mutating set {
+            initialize = false
+            dependency = newValue
+        }
     }
 
     /// The property wrapper.

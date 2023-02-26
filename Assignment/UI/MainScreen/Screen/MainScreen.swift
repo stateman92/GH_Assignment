@@ -12,6 +12,7 @@ final class MainScreen: BaseTableScreen<MainViewModel> {
 
     private let searchController = UISearchController(searchResultsController: nil)
     private let emptyStateView = EmptyStateView()
+    @LazyInjected(DependencyInjector.mainViewModel) private var viewModel
 }
 
 // MARK: - Lifecycle

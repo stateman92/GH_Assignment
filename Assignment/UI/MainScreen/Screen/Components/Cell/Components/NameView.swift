@@ -41,7 +41,7 @@ extension NameView {
     private func setupOwnerName() {
         ownerLabel.configure {
             $0.numberOfLines = 0
-            $0.lineBreakStrategy = []
+            $0.set(lineBreakStrategy: [])
             $0.font = .systemFont(ofSize: 21, weight: .bold)
 
             addArrangedSubview($0)
@@ -51,7 +51,7 @@ extension NameView {
     private func setupRepositoryNameLabel() {
         repositoryNameLabel.configure {
             $0.numberOfLines = 0
-            $0.lineBreakStrategy = []
+            $0.set(lineBreakStrategy: [])
             $0.font = .systemFont(ofSize: 17)
 
             addArrangedSubview($0)

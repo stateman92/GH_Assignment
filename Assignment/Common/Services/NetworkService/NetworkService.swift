@@ -2,17 +2,12 @@
 //  NetworkService.swift
 //  Assignment
 //
-//  Created by Kristof Kalai on 2022. 04. 02..
+//  Created by Kristof Kalai on 2022. 04. 03..
 //
 
 import Assignment_Swagger
 
-/// Service for network calls.
-struct NetworkService { }
-
-// MARK: - Search endpoints
-
-extension NetworkService: NetworkServiceProtocol {
+protocol NetworkService: AutoMockable {
     /// Search for GitHub repositories.
     /// - Parameters:
     ///   - searchTerm: the query contains one or more search keywords and qualifiers.
@@ -22,18 +17,5 @@ extension NetworkService: NetworkServiceProtocol {
     func searchRepositories(searchTerm: String,
                             perPage: Int,
                             page: Int,
-                            completion: @escaping (Result<SearchResponseDTO, Error>) -> Void) {
-        SearchAPI.searchRepositoriesGetWithRequestBuilder(accept: "application/json",
-                                                          q: searchTerm,
-                                                          perPage: perPage,
-                                                          page: page).execute { response, error in
-            if let searchResponse = response?.body {
-                completion(.success(searchResponse))
-            } else if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.failure(NetworkError.unknown))
-            }
-        }
-    }
+                            completion: @escaping (Result<SearchResponseDTO, Error>) -> Void)
 }

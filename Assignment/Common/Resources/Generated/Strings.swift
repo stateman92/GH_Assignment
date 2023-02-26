@@ -3,22 +3,21 @@
 
 import Foundation
 
-// swiftlint:disable superfluous_disable_command file_length implicit_return
+// swiftlint:disable superfluous_disable_command file_length implicit_return prefer_self_in_static_references
 
 // MARK: - Strings
 
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
-
   public enum Main {
     /// GitHub search
-    public static let title = L10n.tr("Localizable", "main_title")
+    public static let title = L10n.tr("Localizable", "main_title", fallback: "GitHub search")
     public enum Search {
       /// Error
-      public static let error = L10n.tr("Localizable", "main_search_error")
+      public static let error = L10n.tr("Localizable", "main_search_error", fallback: "Error")
       /// OK
-      public static let ok = L10n.tr("Localizable", "main_search_ok")
+      public static let ok = L10n.tr("Localizable", "main_search_ok", fallback: "OK")
     }
   }
 }
@@ -28,8 +27,8 @@ public enum L10n {
 // MARK: - Implementation Details
 
 extension L10n {
-  private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
-    let format = BundleToken.bundle.localizedString(forKey: key, value: nil, table: table)
+  private static func tr(_ table: String, _ key: String, _ args: CVarArg..., fallback value: String) -> String {
+    let format = BundleToken.bundle.localizedString(forKey: key, value: value, table: table)
     return String(format: format, locale: Locale.current, arguments: args)
   }
 }

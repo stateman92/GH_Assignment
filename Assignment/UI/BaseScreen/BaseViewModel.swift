@@ -10,7 +10,7 @@ import UIKit
 class BaseViewModel {
     // MARK: Properties
 
-    @LazyInjected var networkService: NetworkServiceProtocol
-    @LazyInjected var loadingService: LoadingServiceProtocol
-    @LazyInjected var navigator: Navigator
+    @LazyInjected(DependencyInjector.networkService) var networkService
+    @LazyInjected(DependencyInjector.loadingService) var loadingService
+    @LazyInjected(DependencyInjector.navigationController) var navigator
 }
