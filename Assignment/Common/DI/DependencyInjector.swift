@@ -8,7 +8,7 @@
 import UIKit
 import Factory
 
-/// A thin layer between the application and the DI library (Resolver).
+/// A thin layer between the application and the DI library (Factory).
 struct DependencyInjector {
     static let networkService = create { NetworkServiceImpl() as NetworkService }
     static let loadingService = create(scope: .shared) { LoadingServiceImpl() as LoadingService }
@@ -18,7 +18,8 @@ struct DependencyInjector {
 }
 
 extension DependencyInjector {
-    static func create<T>(scope: SharedContainer.Scope? = .none, factory: @escaping () -> T) -> Factory<T> {
-        Factory(scope: scope, factory: factory)
+    static func create<T>(scope: Scope? = nil, factory: @escaping () -> T) -> Factory<T> {
+        Container { factory() }
+            .scope(scope)
     }
 }

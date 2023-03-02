@@ -8,7 +8,7 @@
 import Factory
 
 /// A thin layer between the application and the DI library (Factory).
-/// The dependency will be resolver lazily (at the first time you want to use).
+/// The dependency will be resolved lazily (at the first time you want to use).
 @propertyWrapper struct LazyInjected<T> {
     private var factory: Factory<T>
     private var dependency: T!
